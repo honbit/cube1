@@ -32,3 +32,5 @@ def dbt_models():
 @template.function('dbt_model')
 def dbt_model(name):
   return dbt.model(name)
+
+
