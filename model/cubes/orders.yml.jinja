@@ -1,12 +1,11 @@
-{% set model = dbt_model('orders') %}
-
 cubes:
+  {% for model in dbt_models() %}
   - {{ model.as_cube() }}
-
-
+ 
     dimensions:
-      {{ model.as_dimensions() }}
-
+      {{ model.as_dimensions(skip=['very_private_column']) }}
+ 
     measures:
       - name: count
         type: count
+  {% endfor %}
