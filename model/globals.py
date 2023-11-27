@@ -12,6 +12,7 @@ def is_accessible_by_team(team: str, ctx: dict) -> bool:
   return team == ctx['securityContext'].setdefault('team', 'default')
 
 
+from cube_dbt import Dbt
 
 template = TemplateContext()
 
