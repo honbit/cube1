@@ -14,23 +14,23 @@ def is_accessible_by_team(team: str, ctx: dict) -> bool:
 
 
 
-# from cube_dbt import Dbt
+from cube_dbt import Dbt
 
-# template = TemplateContext()
+template = TemplateContext()
 
-# manifest_url = 'https://cube-dbt-integration.s3.amazonaws.com/manifest.json'
+manifest_url = 'https://cube-dbt-integration.s3.amazonaws.com/manifest.json'
 
-# dbt = Dbt.from_url(manifest_url).filter(paths=['marts/'])
+dbt = Dbt.from_url(manifest_url).filter(paths=['marts/'])
 
-# for model in dbt.models:
-#   print(f"aaaa {model.name}")
+for model in dbt.models:
+  print(f"aaaa {model.name}")
 
-# @template.function('dbt_models')
-# def dbt_models():
-#   return dbt.models
+@template.function('dbt_models')
+def dbt_models():
+  return dbt.models
 
-# @template.function('dbt_model')
-# def dbt_model(name):
-#   return dbt.model(name)
+@template.function('dbt_model')
+def dbt_model(name):
+  return dbt.model(name)
 
 
