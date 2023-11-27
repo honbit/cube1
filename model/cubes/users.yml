@@ -84,16 +84,4 @@ cubes:
     # The 'extends' property allows this cube to reuse all properties of the extended cube.
     # However, explicitly provided properties, like the 'sql' property below, will be re-defined.
     # Learn more: https://cube.dev/docs/product/data-modeling/concepts/code-reusability-extending-cubes
-  - name: female_users
-    extends: users
-    sql: >
-      SELECT *
-      FROM 's3://cube-tutorial/users.csv'
-      WHERE gender = 'female'
 
-  - name: male_users
-    extends: users
-    sql: >
-      SELECT *
-      FROM 's3://cube-tutorial/users.csv'
-      WHERE gender = 'male'
